@@ -103,3 +103,9 @@ public class Main {
         }
     }
 }
+//5. Кожен метод огорнути в try catch finally структуру і для кожного з WrongAccountException, WrongCurrencyException, WrongOperationException, Exception виводити в консоль змістовне повідомлення:
+//
+//        Такого акаунту не існує
+//        Акаунт має рахунок в іншій валюті
+//        Акаунт не має достатньо коштів
+//        Сталася помилка при процесінгу, спробуйте ще раз
