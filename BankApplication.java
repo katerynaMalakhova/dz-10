@@ -19,6 +19,7 @@ public class BankApplication {
 
 
     public void process(String accountId, int amount, String currency) throws Exception {
+        System.out.printf("The process for %s, amount %d, currency %s\n", accountId, amount, currency);
 
         accounts.stream().filter(account -> account.getId().equals(accountId))
                 .findAny().orElseThrow(WrongAccountException::new);
@@ -36,8 +37,8 @@ public class BankApplication {
         Account desiredAccount = accounts.stream()
                 .filter(account -> account.getId().equals(accountId))
                 .filter(account -> account.getCurrency().equals(currency))
-                .filter(account -> account.getBalance() >= amount).findAny()
-                .orElseThrow();
+                .filter(account -> account.getBalance() >= amount)
+                .findAny().orElseThrow();
 
         int randomInt = new Random().nextInt(2);
 
